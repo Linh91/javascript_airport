@@ -7,6 +7,10 @@ describe('Airport', function() {
     plane = new Plane();
   });
 
+  it('has a default capacity of 10', function() {
+    expect(airport.capacity).toBe(10);
+  });
+
   it('contains a plane after landing', function() {
     airport.isStormy = function() { return false };
     airport.land(plane);
