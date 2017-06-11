@@ -11,6 +11,14 @@ describe('Airport', function() {
     expect(airport.capacity).toBe(10);
   });
 
+  it('prevents landing if airport is full', function() {
+    for (var i = 0; i < 10; i++) {
+      airport.isStormy = function() { return false };
+      airport.land(plane);
+    }
+    expect( function() { airport.land(plane); } ).toThrow("Airport is full");
+  });
+
   it('contains a plane after landing', function() {
     airport.isStormy = function() { return false };
     airport.land(plane);

@@ -6,6 +6,8 @@ function Airport(capacity = 10) {
 Airport.prototype.land = function(plane) {
   if (this.isStormy()) {
     throw "Weather is stormy";
+  } else if (this.runway.length == 10) {
+    throw "Airport is full";
   } else {
   this.runway.push(plane);
   }
