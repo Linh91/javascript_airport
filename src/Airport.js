@@ -3,8 +3,8 @@ function Airport(capacity = 10) {
   this.capacity = capacity;
 };
 
-Airport.prototype.land = function(plane) {
-  if (this.isStormy()) {
+Airport.prototype.land = function(plane, stormyWeather) {
+  if (stormyWeather) {
     throw "Weather is stormy";
   } else if (this.runway.length == 10) {
     throw "Airport is full";
@@ -13,20 +13,12 @@ Airport.prototype.land = function(plane) {
   }
 };
 
-Airport.prototype.takeOff = function() {
-  if (this.isStormy()) {
+Airport.prototype.takeOff = function(plane, stormyWeather) {
+  if (stormyWeather) {
     throw "Weather is stormy";
   } else if (this.runway.length == 0) {
     throw "Airport is empty";
   } else {
     this.runway.pop();
   }
-};
-
-Airport.prototype.isStormy = function() {
-  if (Math.random() < 0.2) {
-    return true
-  } else {
-    return false
-  };
 };
