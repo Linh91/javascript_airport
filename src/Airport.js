@@ -9,15 +9,17 @@ Airport.prototype.land = function(plane) {
   } else if (this.runway.length == 10) {
     throw "Airport is full";
   } else {
-  this.runway.push(plane);
+    this.runway.push(plane);
   }
 };
 
 Airport.prototype.takeOff = function() {
   if (this.isStormy()) {
     throw "Weather is stormy";
+  } else if (this.runway.length == 0) {
+    throw "Airport is empty";
   } else {
-  this.runway.pop();
+    this.runway.pop();
   }
 };
 
