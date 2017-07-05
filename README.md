@@ -54,3 +54,6 @@ Airport {runway: Array(10), capacity: 10}
 airport.land(plane, weather)
 Uncaught Airport is full
 ```
+
+## Further improvement
+If I had more time, without considering expanding the code further, I would extract the error messages into separate methods inside Airport. This would ensure each method had a clearer responsability and would also avoid nested conditionals, providing a more readable code.
