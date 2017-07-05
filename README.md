@@ -12,6 +12,8 @@ This repository is about how I learnt a new language: JavaScript
 As a strategy for learning a new language, I went back to one of my [first ever programs](https://github.com/ffasolin/airport_challenge) written in Ruby, the first programming language I learnt.
 I rewrote the same simple program in the new language so I could use a range of basic techniques. TDDing was crucial during this process of understanding how JavaScript works and how programs are run differently than in Ruby.
 
+Each of the construction functions were written following the concepts of TDD, single responsability and encapsulation. *Airport* is only responsible for taking off and landing planes, whilst *Plane* is responsible for checking if ship is landed. Finally, *Weather* determines, well, if the weather is stormy or not, which will prevent landing.
+
 ## How to run the tests
 - Load the SpecRunner.html file path on the browser
 
